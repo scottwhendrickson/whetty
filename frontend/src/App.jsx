@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import Music from './pages/Music'
 import Videos from './pages/Videos'
 import Announcements from './pages/Announcements'
+import AnnouncementDetail from './pages/AnnouncementDetail'
 import Shop from './pages/Shop'
 import Tour from './pages/Tour'
 
@@ -19,6 +20,7 @@ const NAV_ITEMS = [
 function App() {
   const [activePage, setActivePage] = useState('home')
   const [menuOpen, setMenuOpen] = useState(false)
+  const [selectedAnnouncement, setSelectedAnnouncement] = useState(null)
 
   const handleNav = (page) => {
     setActivePage(page)
@@ -77,7 +79,8 @@ function App() {
         {activePage === 'home' && <Home setActivePage={handleNav} />}
         {activePage === 'music' && <Music />}
         {activePage === 'videos' && <Videos />}
-        {activePage === 'announcements' && <Announcements />}
+        {activePage === 'announcements' && <Announcements setActivePage={handleNav} setSelectedAnnouncement={setSelectedAnnouncement} />}
+        {activePage === 'announcement-detail' && <AnnouncementDetail announcement={selectedAnnouncement} setActivePage={handleNav} />}
         {activePage === 'shop' && <Shop />}
         {activePage === 'tour' && <Tour />}
       </main>

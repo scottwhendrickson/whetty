@@ -1,0 +1,15 @@
+INSTRUCTIONS: Add Hero Background Image
+========================================
+
+Save the artist painting "POP¡" image as:
+  hero-background.jpg
+
+in this directory (frontend/public/)
+
+The image should be:
+- Format: JPG or JPEG
+- Recommended size: 1920x1080 or larger
+- File name: hero-background.jpg (exactly)
+
+Once saved, the image will automatically appear as the hero background
+on the home page behind the "WHETTY" title.

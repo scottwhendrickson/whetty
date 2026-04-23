@@ -74,37 +74,6 @@ export default function Music() {
           </div>
         </div>
       </div>
-
-      {/* Discography */}
-      <div className="discography">
-        <h3 className="streaming-title">Discography</h3>
-
-        <div className="album-card">
-          <div className="album-art placeholder-art"><span>POP¡</span></div>
-          <div className="album-info">
-            <h4>POP¡ EP</h4>
-            <p className="release-date">May 8th, 2026</p>
-            <ol className="track-list">
-              <li>Character</li>
-              <li>Distant Memory</li>
-            </ol>
-            <span className="pre-order-badge">Pre-Order Available</span>
-          </div>
-        </div>
-
-        <div className="album-card">
-          <div className="album-art placeholder-art"><span>25</span></div>
-          <div className="album-info">
-            <h4>25</h4>
-            <p className="release-date">2026</p>
-            <ol className="track-list">
-              <li>25</li>
-              <li>Debt Free</li>
-              <li>Living</li>
-            </ol>
-          </div>
-        </div>
-      </div>
     </section>
   )
 }

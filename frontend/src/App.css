@@ -183,10 +183,30 @@ body {
 .home-section { animation: fadeIn 0.5s ease; }
 
 .hero {
+  position: relative;
   text-align: center;
-  padding: 5rem 1rem;
+  padding: 8rem 1rem;
   border-bottom: 1px solid var(--border);
   margin-bottom: 4rem;
+  background-image: url('/hero-background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.85));
+  z-index: 1;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
 }
 .hero-title {
   font-size: clamp(4rem, 12vw, 9rem);
@@ -197,7 +217,8 @@ body {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   line-height: 1;
-  margin-bottom: 1rem;
+  margin-bottom: 2.5rem;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 .hero-tagline {
   font-size: 1.25rem;
@@ -437,9 +458,11 @@ body {
   border-radius: 16px;
   padding: 2rem;
   margin-bottom: 1.5rem;
-  transition: border-color 0.3s;
+  transition: all 0.3s;
 }
 .post-card:hover { border-color: var(--accent); }
+.post-card.clickable { cursor: pointer; }
+.post-card.clickable:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(200, 184, 154, 0.2); }
 .post-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; gap: 1rem; }
 .post-title { font-size: 1.25rem; font-weight: 700; }
 .post-date { color: var(--text-secondary); font-size: 0.85rem; white-space: nowrap; }
@@ -455,6 +478,118 @@ body {
   transition: color 0.2s;
 }
 .read-more-btn:hover { color: var(--accent-hover); }
+
+/* ─── Announcement Detail ─────────────────────────────── */
+.announcement-detail-section { animation: fadeIn 0.5s ease; }
+
+.back-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: all 0.3s;
+  margin-bottom: 2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.back-btn:hover {
+  border-color: var(--accent);
+  color: var(--text-primary);
+  transform: translateX(-4px);
+}
+
+.announcement-detail {
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 3rem;
+}
+
+.announcement-header {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+}
+
+.announcement-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.announcement-date {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.announcement-content {
+  color: var(--text-primary);
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+.announcement-content p {
+  margin-bottom: 1.5rem;
+}
+
+.announcement-content h3 {
+  font-size: 1.5rem;
+  margin: 2rem 0 1rem;
+  color: var(--accent);
+}
+
+.announcement-content ul {
+  margin: 1.5rem 0;
+  padding-left: 2rem;
+}
+
+.announcement-content li {
+  margin-bottom: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.announcement-content strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.announcement-content em {
+  color: var(--text-secondary);
+}
+
+.announcement-cta {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.announcement-not-found {
+  text-align: center;
+  padding: 4rem 2rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.announcement-not-found h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--text-secondary);
+}
 
 /* ─── Shop ────────────────────────────────────────────── */
 .shop-section { animation: fadeIn 0.5s ease; }
@@ -528,6 +663,10 @@ body {
   .video-grid { grid-template-columns: 1fr; }
 
   .post-header { flex-direction: column; }
+
+  .announcement-detail { padding: 2rem 1.5rem; }
+  .announcement-title { font-size: 1.75rem; }
+  .announcement-content { font-size: 1rem; }
 
   .countdown { gap: 1rem; }
   .countdown-number { font-size: 2rem; }
