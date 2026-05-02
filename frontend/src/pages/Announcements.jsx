@@ -14,8 +14,6 @@ The EP features:
 • Character - An introspective journey through self-discovery
 • Distant Memory - A nostalgic reflection on moments that shaped us
 
-Both tracks were recorded and produced with a focus on raw emotion and authentic storytelling. I wanted to create something that feels personal yet universal, intimate yet expansive.
-
 Pre-orders are now available, and everyone who pre-orders will get instant access to exclusive behind-the-scenes content and early streaming access 24 hours before the official release.
 
 Thank you for your continued support. This music wouldn't exist without you.
@@ -30,8 +28,6 @@ Thank you for your continued support. This music wouldn't exist without you.
   <li><strong>Character</strong> - An introspective journey through self-discovery</li>
   <li><strong>Distant Memory</strong> - A nostalgic reflection on moments that shaped us</li>
 </ul>
-
-<p>Both tracks were recorded and produced with a focus on raw emotion and authentic storytelling. I wanted to create something that feels personal yet universal, intimate yet expansive.</p>
 
 <p>Pre-orders are now available, and everyone who pre-orders will get instant access to exclusive behind-the-scenes content and early streaming access 24 hours before the official release.</p>
 
