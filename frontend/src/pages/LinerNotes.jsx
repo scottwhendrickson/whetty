@@ -13,7 +13,7 @@ export default function LinerNotes() {
       {/* Special Thanks */}
       <div className="liner-notes-thanks">
         <h3>Special Thanks</h3>
-        <p>Special thanks to Scott, Liz, Erika and Olive for being there as family when I needed it the most :)</p>
+        <p>Special thanks to Scott, Liz, Erika, Olive and Bowser for being there as family when I needed it the most :)</p>
       </div>
 
       {/* 25 EP */}
