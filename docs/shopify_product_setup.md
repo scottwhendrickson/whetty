@@ -82,31 +82,177 @@ Use variants for products with multiple options (size, color, etc.)
 
 ## Products to Create
 
-### Product 1: POP¡ EP T-Shirt
+### Product 1: Men's Whetty Tie Dye Tee
 
 | Field | Value |
 |-------|-------|
-| Title | POP¡ EP T-Shirt |
-| Description | TBD |
-| Price | TBD |
-| Variants | TBD (sizes, colors) |
-| Media | TBD (product photos) |
-| Category | Apparel & Accessories |
+| Title | Whetty Tie Dye Tee — Men's |
+| Description | No two are the same — just like the music. Hand-dyed and one-of-a-kind, the Whetty Tie Dye Tee is made for those who don't follow the pattern. Soft, comfortable, and built to stand out. |
+| Price | $15.00 |
+| Product ID | `9161920741588` |
+| Category | T-Shirts in Clothing Tops |
 | Status | Active |
 | Sales Channels | Online Store, Buy Button |
 
-### Product 2: TBD
+**Buy Button Code:**
+```html
+<div id='product-component-1778260038169'></div>
+<script type="text/javascript">
+/*<![CDATA[*/
+(function () {
+  var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+  if (window.ShopifyBuy) {
+    if (window.ShopifyBuy.UI) {
+      ShopifyBuyInit();
+    } else {
+      loadScript();
+    }
+  } else {
+    loadScript();
+  }
+  function loadScript() {
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = scriptURL;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+    script.onload = ShopifyBuyInit;
+  }
+  function ShopifyBuyInit() {
+    var client = ShopifyBuy.buildClient({
+      domain: 'ij3skn-c0.myshopify.com',
+      storefrontAccessToken: 'c4d2f7b4bb088369c890c99358d2edde',
+    });
+    ShopifyBuy.UI.onReady(client).then(function (ui) {
+      ui.createComponent('product', {
+        id: '9161920741588',
+        node: document.getElementById('product-component-1778260038169'),
+        moneyFormat: '%24%7B%7Bamount%7D%7D',
+        options: {
+          "product": {
+            "styles": {
+              "product": {
+                "@media (min-width: 601px)": {
+                  "max-width": "calc(25% - 20px)",
+                  "margin-left": "20px",
+                  "margin-bottom": "50px"
+                }
+              }
+            },
+            "text": {"button": "Add to cart"}
+          },
+          "productSet": {
+            "styles": {
+              "products": {
+                "@media (min-width: 601px)": {"margin-left": "-20px"}
+              }
+            }
+          },
+          "modalProduct": {
+            "contents": {"img": false, "imgWithCarousel": true, "button": false, "buttonWithQuantity": true},
+            "styles": {
+              "product": {
+                "@media (min-width: 601px)": {"max-width": "100%", "margin-left": "0px", "margin-bottom": "0px"}
+              }
+            },
+            "text": {"button": "Add to cart"}
+          },
+          "option": {},
+          "cart": {"text": {"total": "Subtotal", "button": "Checkout"}},
+          "toggle": {}
+        },
+      });
+    });
+  }
+})();
+/*]]>*/
+</script>
+```
+
+### Product 2: Women's Whetty Tie Dye Tee
 
 | Field | Value |
 |-------|-------|
-| Title | TBD |
-| Description | TBD |
-| Price | TBD |
-| Variants | TBD |
-| Media | TBD |
-| Category | TBD |
+| Title | Whetty Tie Dye Tee — Women's |
+| Description | No two are the same — just like the music. Hand-dyed and one-of-a-kind, the Whetty Tie Dye Tee is made for those who don't follow the pattern. Soft, comfortable, and built to stand out. |
+| Price | $15.00 |
+| Product ID | `9163249713364` |
+| Category | T-Shirts in Clothing Tops |
 | Status | Active |
 | Sales Channels | Online Store, Buy Button |
+
+**Buy Button Code:**
+```html
+<div id='product-component-1778260097047'></div>
+<script type="text/javascript">
+/*<![CDATA[*/
+(function () {
+  var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+  if (window.ShopifyBuy) {
+    if (window.ShopifyBuy.UI) {
+      ShopifyBuyInit();
+    } else {
+      loadScript();
+    }
+  } else {
+    loadScript();
+  }
+  function loadScript() {
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = scriptURL;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+    script.onload = ShopifyBuyInit;
+  }
+  function ShopifyBuyInit() {
+    var client = ShopifyBuy.buildClient({
+      domain: 'ij3skn-c0.myshopify.com',
+      storefrontAccessToken: 'c4d2f7b4bb088369c890c99358d2edde',
+    });
+    ShopifyBuy.UI.onReady(client).then(function (ui) {
+      ui.createComponent('product', {
+        id: '9163249713364',
+        node: document.getElementById('product-component-1778260097047'),
+        moneyFormat: '%24%7B%7Bamount%7D%7D',
+        options: {
+          "product": {
+            "styles": {
+              "product": {
+                "@media (min-width: 601px)": {
+                  "max-width": "calc(25% - 20px)",
+                  "margin-left": "20px",
+                  "margin-bottom": "50px"
+                }
+              }
+            },
+            "text": {"button": "Add to cart"}
+          },
+          "productSet": {
+            "styles": {
+              "products": {
+                "@media (min-width: 601px)": {"margin-left": "-20px"}
+              }
+            }
+          },
+          "modalProduct": {
+            "contents": {"img": false, "imgWithCarousel": true, "button": false, "buttonWithQuantity": true},
+            "styles": {
+              "product": {
+                "@media (min-width: 601px)": {"max-width": "100%", "margin-left": "0px", "margin-bottom": "0px"}
+              }
+            },
+            "text": {"button": "Add to cart"}
+          },
+          "option": {},
+          "cart": {"text": {"total": "Subtotal", "button": "Checkout"}},
+          "toggle": {}
+        },
+      });
+    });
+  }
+})();
+/*]]>*/
+</script>
+```
 
 ---
 

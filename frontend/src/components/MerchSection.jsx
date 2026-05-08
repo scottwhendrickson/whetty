@@ -2,11 +2,15 @@ import { useEffect, useRef } from 'react'
 
 const SHOPIFY_DOMAIN = 'ij3skn-c0.myshopify.com'
 const SHOPIFY_TOKEN = 'c4d2f7b4bb088369c890c99358d2edde'
-const PRODUCT_ID = '9143740694740'
+
+const PRODUCTS = [
+  { id: '9161920741588', name: "Men's Tee" },
+  { id: '9163249713364', name: "Women's Tee" },
+]
 
 export default function MerchSection() {
-  const productRef = useRef(null)
   const initialized = useRef(false)
+  const productRefs = useRef([])
 
   useEffect(() => {
     if (initialized.current) return
@@ -19,87 +23,70 @@ export default function MerchSection() {
       })
 
       window.ShopifyBuy.UI.onReady(client).then((ui) => {
-        ui.createComponent('product', {
-          id: PRODUCT_ID,
-          node: productRef.current,
-          moneyFormat: '%24%7B%7Bamount%7D%7D',
-          options: {
-            product: {
-              styles: {
-                product: {
-                  'background-color': '#252525',
-                  'border-radius': '16px',
-                  padding: '24px',
-                  color: '#ffffff',
-                },
-                title: {
-                  'font-family': 'inherit',
-                  'font-size': '1.4rem',
-                  color: '#ffffff',
-                },
-                price: {
-                  'font-family': 'inherit',
-                  'font-size': '1.2rem',
-                  color: '#1db954',
-                },
-                button: {
-                  'font-family': 'inherit',
-                  'font-size': '1rem',
-                  'font-weight': '600',
-                  'background-color': '#c8b89a',
-                  color: '#ffffff',
-                  'border-radius': '50px',
-                  padding: '12px 32px',
-                  ':hover': {
-                    'background-color': '#d4c4aa',
+        PRODUCTS.forEach((product, index) => {
+          if (!productRefs.current[index]) return
+          ui.createComponent('product', {
+            id: product.id,
+            node: productRefs.current[index],
+            moneyFormat: '%24%7B%7Bamount%7D%7D',
+            options: {
+              product: {
+                styles: {
+                  product: {
+                    '@media (min-width: 601px)': {
+                      'max-width': '100%',
+                      'margin-left': '0px',
+                      'margin-bottom': '50px',
+                    },
                   },
-                  ':focus': {
-                    'background-color': '#d4c4aa',
+                },
+                text: {
+                  button: 'Add to cart',
+                },
+              },
+              productSet: {
+                styles: {
+                  products: {
+                    '@media (min-width: 601px)': {
+                      'margin-left': '-20px',
+                    },
                   },
                 },
               },
-              text: {
-                button: 'Add to Cart',
+              modalProduct: {
+                contents: {
+                  img: false,
+                  imgWithCarousel: true,
+                  button: false,
+                  buttonWithQuantity: true,
+                },
+                styles: {
+                  product: {
+                    '@media (min-width: 601px)': {
+                      'max-width': '100%',
+                      'margin-left': '0px',
+                      'margin-bottom': '0px',
+                    },
+                  },
+                },
+                text: {
+                  button: 'Add to cart',
+                },
               },
+              option: {},
+              cart: {
+                text: {
+                  total: 'Subtotal',
+                  button: 'Checkout',
+                },
+              },
+              toggle: {},
             },
-            cart: {
-              styles: {
-                button: {
-                  'font-family': 'inherit',
-                  'font-size': '1rem',
-                  'font-weight': '600',
-                  'background-color': '#c8b89a',
-                  color: '#ffffff',
-                  'border-radius': '50px',
-                  ':hover': {
-                    'background-color': '#d4c4aa',
-                  },
-                },
-              },
-              text: {
-                total: 'Subtotal',
-                button: 'Checkout',
-              },
-            },
-            toggle: {
-              styles: {
-                toggle: {
-                  'background-color': '#c8b89a',
-                  ':hover': {
-                    'background-color': '#d4c4aa',
-                  },
-                  ':focus': {
-                    'background-color': '#d4c4aa',
-                  },
-                },
-              },
-            },
-          },
+          })
         })
       })
     }
 
-    // Load Shopify Buy Button SDK if not already loaded
     if (window.ShopifyBuy && window.ShopifyBuy.UI) {
       initShopify()
     } else {
@@ -114,9 +101,15 @@ export default function MerchSection() {
   return (
     <section className="merch-section">
       <h2 className="section-title">Merch Store</h2>
-      <p className="section-subtitle">Rep the brand. Limited drops.</p>
+      <p className="section-subtitle">Hand-dyed. One of a kind. Limited run.</p>
       <div className="merch-grid">
-        <div ref={productRef} className="shopify-product" />
+        {PRODUCTS.map((product, index) => (
+          <div
+            key={product.id}
+            ref={(el) => (productRefs.current[index] = el)}
+            className="shopify-product"
+          />
+        ))}
       </div>
     </section>
   )

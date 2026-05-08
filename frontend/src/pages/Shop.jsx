@@ -1,7 +1,7 @@
 import MerchSection from '../components/MerchSection'
 
 // Set to true when products are ready to go live
-const SHOP_LIVE = false
+const SHOP_LIVE = true
 
 export default function Shop() {
   if (!SHOP_LIVE) {
