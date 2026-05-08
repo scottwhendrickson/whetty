@@ -1,8 +1,8 @@
 // Add YouTube video IDs here as they become available
 const VIDEOS = [
-  { id: 'zNo6SDmoyCQ', title: 'Whetty - 25 (Official Visualizer)' },
-  { id: 'jjKPCk7leiI', title: 'Whetty - Living (Official Audio)' },
-  { id: 'zfaqa1SHseM', title: 'Whetty - Debt Free (Official Audio)' },
+  { id: 'UGVqxrMwpTM', title: 'Whetty - Distant Memory (Official Music Video)' },
+  { id: '8Kiw1U_HACA', title: 'Whetty - Character (Official Music Video)' },
+  { id: 'ehzokr7YmbI', title: 'Whetty - 25 (Official Visualizer)' },
 ]
 
 export default function Videos() {
