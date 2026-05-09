@@ -18,27 +18,6 @@ export default function Home({ setActivePage }) {
         </div>
       </div>
 
-      {/* Featured Release */}
-      <div className="featured-release">
-        <h2 className="section-title">Featured Release</h2>
-        <div className="release-card">
-          <div className="release-artwork placeholder-art">
-            <span>POP¡</span>
-          </div>
-          <div className="release-info">
-            <h3>POP¡ EP</h3>
-            <p className="release-date">New EP — May 8th, 2026</p>
-            <ol className="track-list">
-              <li>Character</li>
-              <li>Distant Memory</li>
-            </ol>
-            <button className="cta-btn primary" onClick={() => setActivePage('shop')}>
-              Pre-Order Now
-            </button>
-          </div>
-        </div>
-      </div>
-
       {/* Email Signup */}
       <div className="email-signup">
         <h2>Stay Updated</h2>
