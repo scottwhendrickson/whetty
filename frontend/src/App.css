@@ -591,8 +591,9 @@ body {
   gap: 2rem;
   max-width: 800px;
   margin: 0 auto;
+  justify-items: center;
 }
-.shopify-product { min-height: 200px; }
+.shopify-product { min-height: 200px; width: 100%; }
 
 /* ─── Tour ────────────────────────────────────────────── */
 .tour-section { animation: fadeIn 0.5s ease; }
@@ -651,7 +652,7 @@ body {
   .countdown { gap: 1rem; }
   .countdown-number { font-size: 2rem; }
 
-  .merch-grid { grid-template-columns: 1fr; }
+  .merch-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
 
   .hero { padding: 3rem 1rem; }
   .hero-ctas { flex-direction: column; align-items: center; }

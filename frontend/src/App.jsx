@@ -30,7 +30,7 @@ function App() {
     <div className="app">
       <header className="header">
         <div className="logo-container" onClick={() => handleNav('home')} style={{ cursor: 'pointer' }}>
-          <img src="/whetty_logo.avif" alt="Whetty" className="logo" />
+          <img src="/WH_logo.jpg" alt="Whetty" className="logo" />
         </div>
 
         {/* Desktop Nav */}
