@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import Home from './pages/Home'
 import Music from './pages/Music'
@@ -19,6 +19,17 @@ const NAV_ITEMS = [
 function App() {
   const [activePage, setActivePage] = useState('home')
   const [menuOpen, setMenuOpen] = useState(false)
+
+  // Track page views in Google Analytics on navigation (SPA)
+  useEffect(() => {
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'page_view', {
+        page_title: activePage,
+        page_path: `/${activePage === 'home' ? '' : activePage}`,
+        page_location: window.location.origin + `/${activePage === 'home' ? '' : activePage}`,
+      })
+    }
+  }, [activePage])
 
   const handleNav = (page) => {
     setActivePage(page)
